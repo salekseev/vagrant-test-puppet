@@ -2,6 +2,7 @@
 
 # This script will create a client and perform a p4 sync of the head
 
+export P4PORT=perforce.athenahealth.com:1666
 export P4CLIENT=build_puppettest
 
 if ! [ $(p4 clients -u build | grep $P4CLIENT) ]; then

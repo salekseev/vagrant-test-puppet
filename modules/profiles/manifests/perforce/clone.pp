@@ -73,7 +73,7 @@ class profiles::perforce::clone ( $user='build', $group='ath' ) {
     user        => $user,
     require     => Exec['/tmp/p4-build-puppettest.sh'],
     cwd         => "/home/${user}/puppet_testing",
-    environment => ['P4CLIENT=build_puppettest'],
+    environment => ['P4PORT=perforce.athenahealth.com:1666', 'P4CLIENT=build_puppettest'],
     command     => 'p4 sync -qf //depot/quicksync/...'
   }
 
